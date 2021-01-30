@@ -19,5 +19,12 @@ from pledges import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('', views.home),
+
+    # Auth
+    path('signup/', views.signupuser, name='signupuser'),
+
+    # Pledges
+    path('current/', views.currentpledges, name='currentpledges'),
+
 ]

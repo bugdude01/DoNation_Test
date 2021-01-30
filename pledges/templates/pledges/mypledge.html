@@ -1,0 +1,47 @@
+{% {% extends 'base.html' %}%}
+
+<h1>My Pledge</h1>
+
+<form action="">
+  <h2>Veg Out</h2>
+  <p>
+    At the moment, I munch on
+    <input type="number" name="number" min="0" max="15" id="current_meals">
+    </input type="number">
+    meaty meals each week. For the next two months, I pledge to go veg for
+    <input type="number" name="number" min="0" max="15" id="veggie_meals">
+    </input type="number">
+    extra meals each week.
+  </p>
+
+  <h2>Clean Your Bills</h2>
+  <p>
+    Within the next two months, I pledge to switch from my current energy
+    supplier – which is
+  
+  <select name="number" id="energy_supplier">
+    <option value=""></option>
+    <option value="bog standard">bog standard</option>
+    <option value="a great green tarif">a great green tarif</option>
+  </select>
+  – to a green energy supplier.
+
+  <select name="number" id="energy_supplier">
+    <option value=""></option>
+    <option value="bog standard">bog standard</option>
+    <option value="a great green tarif">a great green tarif</option>
+  </select>
+
+  <input type="number" name="number" id="number_of_people">
+  </input type="number">
+  people live in our home. My house is mainly heated by
+  <select name="number" id="heating_source">
+    <option value=""></option>
+    <option value="gas or oil">gas or oil</option>
+    <option value="electricity">electricity</option>
+    </p>
+  </select>
+  <br>
+  <br>
+  <button type="submit">Submit</button>
+</form>
