@@ -6,8 +6,11 @@
 
 <ul>
   {% for pledge in pledges %}
-  <li>{{pledge.title}}</li> 
-  
+  <li>
+    <a href="{% url 'viewpledge' pledge.id %}">
+    {{pledge.title}}
+    </a>
+  </li>  
   {% endfor %}
 </ul>
 

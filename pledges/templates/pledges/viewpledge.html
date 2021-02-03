@@ -4,4 +4,9 @@
 
 {{ pledge.title }}
 
+<p>OK, so for this pledge you told us you would replace <b>{{ pledge.current_meals }}</b> meaty meals with <b>{{ pledge.veggie_meals}}</b> Veggie meals.</p>
+<br>
+<p>You also pledged to move from your current energy supplier to <b>{{ pledge.get_energy_supplier_display }}</b>, where there are <b>{{ pledge.number_of_people }}</b>
+ people living in your house, using <b>{{ pledge.get_heating_source_display }}</b> to keep your home warm.</p>
+
 {% endblock  %}

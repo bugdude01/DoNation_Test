@@ -75,4 +75,4 @@ def allpledges(request):
 
 def viewpledge(request, pledge_pk):
     pledge = get_object_or_404(Pledge, pk=pledge_pk)
-    return render(request, 'pledges/pledge/viewpledge.html', {'pledge': pledge})
+    return render(request, 'pledges/viewpledge.html', {'pledge': pledge})
