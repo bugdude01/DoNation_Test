@@ -8,7 +8,9 @@
       {% csrf_token %}
   <button type="Submit">Logout</button>
   </form>
-
+    <a href="{% url 'makeplegde' %}">Make a new Pledge</a>
+    <a href="{% url 'myplegdes' %}">See All Your Pledges</a>
+    <a href="{% url 'currentpledges' %}">See Everyone's Pledges</a>
     {% else %}
 
     <a href="{% url 'signupuser' %}">Sign Up</a>

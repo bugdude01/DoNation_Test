@@ -21,7 +21,7 @@ def signupuser(request):
                     request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('currentpledges')
+                return redirect('myplegdes')
             except IntegrityError:
                 return render(request, 'pledges/signupuser.html', {'form': UserCreationForm(), 'error': 'That username has already been taken, Please choose another username!'})
         else:
@@ -45,6 +45,14 @@ def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
+
+
+def makeplegde(request):
+    return render(request, 'pledges/makepledge.html')
+
+
+def myplegdes(request):
+    return render(request, 'pledges/mypledges.html')
 
 
 def currentpledges(request):

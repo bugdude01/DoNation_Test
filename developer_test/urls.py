@@ -27,6 +27,8 @@ urlpatterns = [
     path('logout/', views.logoutuser, name='logoutuser'),
 
     # Pledges
+    path('makeplegde/', views.makeplegde, name='makeplegde'),
+    path('mypledges/', views.myplegdes, name='myplegdes'),
     path('current/', views.currentpledges, name='currentpledges'),
 
 ]
