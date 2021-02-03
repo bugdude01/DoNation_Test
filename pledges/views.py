@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import PledgeForm
+from .models import Pledge
 
 
 def home(request):
@@ -39,7 +40,7 @@ def loginuser(request):
             return render(request, 'pledges/loginuser.html', {'form': AuthenticationForm(), 'error': 'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('currentpledges')
+            return redirect('myplegdes')
 
 
 def logoutuser(request):
@@ -50,13 +51,23 @@ def logoutuser(request):
 
 def makeplegde(request):
     form = PledgeForm()
+    if request.method == 'GET':
+        return render(request, 'pledges/makepledge.html', {'form': form})
+    else:
+        form = PledgeForm(request.POST)
+        newpledge = form.save(commit=False)
+        newpledge.user = request.user
+        newpledge.save()
+        return redirect('myplegdes')
 
     return render(request, 'pledges/makepledge.html', {'form': form})
 
 
 def myplegdes(request):
-    return render(request, 'pledges/mypledges.html')
+    pledges = Pledge.objects.filter(user=request.user)
+    return render(request, 'pledges/mypledges.html', {'pledges': pledges})
 
 
-def currentpledges(request):
-    return render(request, 'pledges/currentpledges.html')
+def allpledges(request):
+    pledges = Pledge.objects.all()
+    return render(request, 'pledges/allpledges.html', {'pledges': pledges})

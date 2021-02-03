@@ -1,0 +1,14 @@
+{% extends 'pledges/base.html' %}
+
+{% block content %}
+
+<h1>Here's all the pledges we have so far</h1>
+
+<ul>
+{% for pledge in pledges %}
+    <li><b>{{ pledge.title }}</b> pledged by: {{ pledge.user}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+

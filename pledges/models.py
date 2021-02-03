@@ -35,6 +35,6 @@ class Pledge(models.Model):
         default=GAS_OR_OIL
     )
 
-    message = models.CharField(max_length=255)
+    message = models.TextField(max_length=255, blank=True)
     created = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

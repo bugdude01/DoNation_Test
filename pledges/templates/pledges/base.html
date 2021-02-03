@@ -2,15 +2,16 @@
 
     {% if user.is_authenticated %}
 
-    <h1>Logged in as {{ user.username }}</h1>
-    <br>
-    <form action="{% url 'logoutuser' %}" method="POST">
-      {% csrf_token %}
-  <button type="Submit">Logout</button>
-  </form>
     <a href="{% url 'makeplegde' %}">Make a new Pledge</a>
     <a href="{% url 'myplegdes' %}">See All Your Pledges</a>
-    <a href="{% url 'currentpledges' %}">See Everyone's Pledges</a>
+    <a href="{% url 'allpledges' %}">See Everyone's Pledges</a>
+    <h3>Logged in as {{ user.username }}</h3>
+    <br>
+    <hr>
+    <form action="{% url 'logoutuser' %}" method="POST">
+      {% csrf_token %}
+    <button type="Submit">Logout</button>
+  </form>
     {% else %}
 
     <a href="{% url 'signupuser' %}">Sign Up</a>

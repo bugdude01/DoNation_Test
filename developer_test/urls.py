@@ -19,7 +19,7 @@ from pledges import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
 
     # Auth
     path('signup/', views.signupuser, name='signupuser'),
@@ -29,6 +29,6 @@ urlpatterns = [
     # Pledges
     path('makeplegde/', views.makeplegde, name='makeplegde'),
     path('mypledges/', views.myplegdes, name='myplegdes'),
-    path('current/', views.currentpledges, name='currentpledges'),
+    path('allpledges/', views.allpledges, name='allpledges'),
 
 ]
