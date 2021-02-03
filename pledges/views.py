@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
+from .forms import PledgeForm
 
 
 def home(request):
@@ -48,7 +49,9 @@ def logoutuser(request):
 
 
 def makeplegde(request):
-    return render(request, 'pledges/makepledge.html')
+    form = PledgeForm()
+
+    return render(request, 'pledges/makepledge.html', {'form': form})
 
 
 def myplegdes(request):
