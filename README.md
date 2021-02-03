@@ -1,6 +1,6 @@
 # DoNation_Test
 
-#The Do Nation platform allows individuals to pledge to do an action to improve their lives and
+# The Do Nation platform allows individuals to pledge to do an action to improve their lives and
 make an environmental impact. Each action in our system is capable of supporting multiple
 metrics, for example, CO2, water and waste. When a user pledges to do an action, they answer a
 few questions which generate the savings expected if they do as promised. An example is shown
@@ -15,7 +15,7 @@ so the system needs to keep check of what version a user pledges towards:
 content within mead based meald versus veggie meals as well as number of people in a household utilising a particular
 heating source (gas and oil vs electricity) with either a bog standard supplier vs a new green supplier.
 
-#Tasks
+# Tasks
 Please write tests as you see fit while doing the below:
 1) Setup a basic Django project
 2) Create a system to store this information and details about what pledge a user has made
