@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 
 class Pledge(models.Model):
 
+    title = models.CharField(max_length=100)
+    current_meals = models.IntegerField()
+    veggie_meals = models.IntegerField()
+
     BOG_STANDARD = 'BS'
     A_GREAT_GREEN_TARRIF = 'GT'
     energy_supplier_choices = [
@@ -15,6 +19,8 @@ class Pledge(models.Model):
         choices=energy_supplier_choices,
         default=BOG_STANDARD
     )
+
+    number_of_people = models.IntegerField()
 
     GAS_OR_OIL = 'GO'
     ELECTRICITY = 'EL'
@@ -29,10 +35,6 @@ class Pledge(models.Model):
         default=GAS_OR_OIL
     )
 
-    title = models.CharField(max_length=100)
-    created = models.DateField(auto_now_add=True)
-    current_meals = models.IntegerField()
-    veggie_meals = models.IntegerField()
-    number_of_people = models.IntegerField()
     message = models.CharField(max_length=255)
+    created = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
