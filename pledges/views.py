@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
@@ -71,3 +71,8 @@ def myplegdes(request):
 def allpledges(request):
     pledges = Pledge.objects.all()
     return render(request, 'pledges/allpledges.html', {'pledges': pledges})
+
+
+def viewpledge(request, pledge_pk):
+    pledge = get_object_or_404(Pledge, pk=pledge_pk)
+    return render(request, 'pledges/pledge/viewpledge.html', {'pledge': pledge})

@@ -38,3 +38,6 @@ class Pledge(models.Model):
     message = models.TextField(max_length=255, blank=True)
     created = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

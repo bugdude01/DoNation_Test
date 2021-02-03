@@ -30,5 +30,6 @@ urlpatterns = [
     path('makeplegde/', views.makeplegde, name='makeplegde'),
     path('mypledges/', views.myplegdes, name='myplegdes'),
     path('allpledges/', views.allpledges, name='allpledges'),
+    path('pledge/<int:pledge_pk>/', views.viewpledge, name='viewpledge'),
 
 ]

@@ -6,7 +6,8 @@
 
 <ul>
 {% for pledge in pledges %}
-    <li><b>{{ pledge.title }}</b> pledged by: {{ pledge.user}}</li>
+    <li><b>{{ pledge.title }}</b> pledged by: <b>{{ pledge.user}}</b>
+    {% if pledge.message %} - {{ pledge.message }}{% endif %}</li>
 {% endfor %}
 </ul>
 
