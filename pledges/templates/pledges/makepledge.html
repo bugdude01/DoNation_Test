@@ -2,18 +2,21 @@
 
 {% block content %}
 
-<h2>Make a Pledge!</h2>
-
+<h1>Make a Pledge</h1>
+<br>
 <form action="" method="POST">
 {% csrf_token %}
 
   <h3>Give your pledge a name: </h3> {{ form.title }}
-  <h2>Veg Out</h2>
+  <br>
+  <br>
+  <h2>Veg Out!</h2>
+  <br>
   <p>
     At the moment, I munch on {{ form.current_meals}} meaty meals each week. For the next two months, I pledge to go veg for {{ form.veggie_meals }}
     extra meals each week.
   </p>
-
+  <br>
   <h2>Clean Your Bills</h2>
   <p>
     Within the next two months, I pledge to switch from my current energy
@@ -21,6 +24,7 @@
 
 
 {{ form.number_of_people }} people live in our home. My house is mainly heated by {{ form.heating_source }}
+  <br>
   <br>
   <h3>Tell us why you're doing this:</h3>
   {{ form.message }}

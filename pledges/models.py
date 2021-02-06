@@ -41,3 +41,10 @@ class Pledge(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Converter(models.Model):
+
+    carbon = models.IntegerField()
+    water = models.IntegerField()
+    waste = models.IntegerField()

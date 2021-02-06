@@ -2,18 +2,43 @@
 
 {% block content %}
 
-<h1>My Pledges</h1>
-
-<ul>
-  {% for pledge in pledges %}
-  <li>
-    <a href="{% url 'viewpledge' pledge.id %}">
-    {{pledge.title}}
-    </a>
-  </li>  
-  {% endfor %}
-</ul>
+<h1 class="display-3 text-center">Here's {{user.username}}'s pledges . . </h1>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} pledges</h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} Water Saved<h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} Co2 Reduced</h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} Waste Saving</h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{meaty_count}} meaty meals</h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges.veggie_meals}} Veggie Meals</h1>
+        </div>
+    </div>
+</div>
+<br>
+<h1 class="display-5 text-center">Click a pledge to see the details . . </h1>
+<br>
+<div class="container text-center">
+  <ul style="list-style-type: none;">
+    {% for pledge in pledges %}
+    <li>
+      <a href="{% url 'viewpledge' pledge.id %}">
+      {{pledge.title}}
+      </a>
+    </li>  
+    {% endfor %}
+  </ul>
+</div>
 
 {% endblock  %}
-
-

@@ -2,14 +2,37 @@
 
 {% block content %}
 
-<h1>Here's all the pledges we have so far</h1>
+<h1 class="display-3 text-center">Here's all the pledges we have so far</h1>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} pledges</h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} Water Saved<h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} Co2 Reduced</h1>
+        </div>
+        <div class="col">
+            <h1 class="display-5 text-center">{{pledges|length}} Water Saving</h1>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container text-center">
+    <ul style="list-style-type: none;">
+    {% for pledge in pledges %}
+        <li><b>{{ pledge.title }}</b> pledged by: <b>{{ pledge.user}}</b>
+        {% if pledge.message %} - {{ pledge.message }}{% endif %}</li>
+    {% endfor %}
+    </ul>
+</div>
 
-<ul>
-{% for pledge in pledges %}
-    <li><b>{{ pledge.title }}</b> pledged by: <b>{{ pledge.user}}</b>
-    {% if pledge.message %} - {{ pledge.message }}{% endif %}</li>
-{% endfor %}
-</ul>
+<br>
+
 
 {% endblock %}
 

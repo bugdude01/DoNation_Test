@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import PledgeForm
-from .models import Pledge
+from .models import Pledge, Converter
 
 
 def home(request):
@@ -40,7 +40,7 @@ def loginuser(request):
             return render(request, 'pledges/loginuser.html', {'form': AuthenticationForm(), 'error': 'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('myplegdes')
+            return redirect('allpledges')
 
 
 def logoutuser(request):
@@ -64,8 +64,9 @@ def makeplegde(request):
 
 
 def myplegdes(request):
+    meaty_count = Pledge.objects.all()
     pledges = Pledge.objects.filter(user=request.user)
-    return render(request, 'pledges/mypledges.html', {'pledges': pledges})
+    return render(request, 'pledges/mypledges.html', {'pledges': pledges}, {'meaty_count': meaty_count})
 
 
 def allpledges(request):
